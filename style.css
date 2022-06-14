@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #EEF9BF;
+}
+
+header > div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 40px;
+    margin-bottom: 47px;
+}
+
+header > div > h1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+    color: #75B79E;
+
+    text-align: center;
+    text-justify: center;
+}
+
+.gameZone{
+    display: flex;
+    justify-content: center;
+}
+
+.cardsZone{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 950px;
+}
+
+.cardArea{
+    height: 146px;
+    width: 117px;
+    background: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    margin: 0px 34px 34px 0px;
+}
+
+.parrotImg{
+    width: 100px;
+    height: 100px;
+    margin: 20px 7px 20px 7px;
+}
