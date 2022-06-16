@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /*pode ser transparent também*/
+  }
+
 body{
     background-color: #EEF9BF;
 }
@@ -30,6 +34,7 @@ header > div > h1{
 .gameZone{
     display: flex;
     justify-content: center;
+    margin-left: 34px;
 }
 
 .cardsZone{
@@ -46,17 +51,30 @@ header > div > h1{
     border: 1px solid #99CEA8;
     border-radius: 5px;
     margin: 0px 34px 34px 0px;
-
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
     transition: 0.6s;
     cursor: pointer;
+
+    position: relative;
+    transition: all .5s;
+    transform-style: preserve-3d;
+}
+
+.face{
+    backface-visibility: hidden;
 }
 
 .parrotImg{
     width: 100px;
     height: 100px;
     margin: 20px 7px 20px 7px;
+    position: absolute;
 }
 
 .flip{
     transform: rotateY(180deg);
+}
+
+.front-face {
+  transform: rotateY(180deg);
 }
