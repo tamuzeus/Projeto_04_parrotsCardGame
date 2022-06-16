@@ -36,7 +36,7 @@ header > div > h1{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 850px;
+    width: 1057px;
 }
 
 .cardArea{
@@ -46,10 +46,17 @@ header > div > h1{
     border: 1px solid #99CEA8;
     border-radius: 5px;
     margin: 0px 34px 34px 0px;
+
+    transition: 0.6s;
+    cursor: pointer;
 }
 
 .parrotImg{
     width: 100px;
     height: 100px;
     margin: 20px 7px 20px 7px;
+}
+
+.flip{
+    transform: rotateY(180deg);
 }
