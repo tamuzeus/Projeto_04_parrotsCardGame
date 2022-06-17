@@ -73,8 +73,10 @@ function matchCards(img1, img2){
     }
 
     else{
-        img1.classList.remove('flip')
-        img2.classList.remove('flip')
+        setTimeout(() => {
+            img1.classList.remove('flip')
+            img2.classList.remove('flip')
+        }, 1000)
     }
 }
 
