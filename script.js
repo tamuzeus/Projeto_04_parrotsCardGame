@@ -1,5 +1,5 @@
 
-//Capturar numero
+//Capturar numero de cards
 let cards = prompt('Com quantas cartas quer jogar? Escolha de 4 a 14');
 let cardsNumber = parseInt(cards);
 
