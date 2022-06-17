@@ -52,11 +52,10 @@ header > div > h1{
     border-radius: 5px;
     margin: 0px 34px 34px 0px;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
-    transition: 0.6s;
     cursor: pointer;
 
     position: relative;
-    transition: all .5s;
+    transition: all 1s;
     transform-style: preserve-3d;
 }
 
@@ -73,6 +72,8 @@ header > div > h1{
 
 .flip{
     transform: rotateY(180deg);
+    transition: all 1s;
+    transform-style: preserve-3d;
 }
 
 .front-face {
