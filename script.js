@@ -1,6 +1,7 @@
 
 //Capturar numero de cards
-let cards = prompt('Com quantas cartas quer jogar? Escolha de 4 a 14');
+let nome = prompt('Digite seu nome:')
+let cards = prompt('Com quantas cartas quer jogar? Escolha de 4 a 14 cartas:');
 let cardsNumber = parseInt(cards);
 let numberClick= 0;
 let numberCorrects = 0;
@@ -77,7 +78,7 @@ function matchCards(img1, img2){
         numberCorrects += 2
         if(numberCorrects === cardsNumber){
             setTimeout(() => {
-                alert(`Você venceu! \n Sua conseguiu achar todos os pares de ${cardsNumber} cartas!\n Precisou realizar ${numberClick} viradas!`)
+                alert(`Você venceu! ${nome}\nVocê conseguiu achar todos os pares de ${cardsNumber} cartas!\n Precisou realizar ${numberClick} viradas!`)
             }, 1500)
         }
     }
