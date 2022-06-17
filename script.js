@@ -77,7 +77,7 @@ function matchCards(img1, img2){
         numberCorrects += 2
         if(numberCorrects === cardsNumber){
             setTimeout(() => {
-                alert(`Você venceu ${nome}!\nVocê conseguiu achar todos os pares de ${cardsNumber} cartas!\nRealizar ${numberClick} viradas de cartas!`)
+                alert(`Você venceu!\nVocê conseguiu achar todos os pares de ${cardsNumber} cartas!\nRealizar ${numberClick} viradas de cartas!`)
             }, 1500)
         }
     }
