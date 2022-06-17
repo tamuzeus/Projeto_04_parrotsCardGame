@@ -2,6 +2,8 @@
 //Capturar numero de cards
 let cards = prompt('Com quantas cartas quer jogar? Escolha de 4 a 14');
 let cardsNumber = parseInt(cards);
+let numberClick= 0;
+let numberCorrects = 0;
 
 //Arrays
 const frontCardsArray = ['unicornparrot.gif', 'tripletsparrot.gif', 'revertitparrot.gif', 'metalparrot.gif', 'fiestaparrot.gif', 'explodyparrot.gif', 'bobrossparrot.gif'];
@@ -54,12 +56,14 @@ let cardSelected
 function flipCard(element){
     element.classList.add('flip')
     if(cardSelected != null){
+        numberClick += 1
         if(cardSelected != element){
             matchCards(cardSelected, element)
         }
     }
     else{
         cardSelected = element;
+        numberClick += 1
     }
 }
 //cardselect armazena a primeira info -- indica que ja possui uma carta virada
@@ -70,6 +74,12 @@ function matchCards(img1, img2){
     if(img1.querySelector('.front-face .parrotImg').src === img2.querySelector('.front-face .parrotImg').src){
         img1.removeAttribute("onclick")
         img2.removeAttribute("onclick")
+        numberCorrects += 2
+        if(numberCorrects === cardsNumber){
+            setTimeout(() => {
+                alert(`Você venceu! \n Sua conseguiu achar todos os pares de ${cardsNumber} cartas!\n Precisou realizar ${numberClick} viradas!`)
+            }, 1500)
+        }
     }
 
     else{
@@ -79,6 +89,3 @@ function matchCards(img1, img2){
         }, 1000)
     }
 }
-
-//falta=
-// - quando terminar, tela de vitória -- queryselectorAll !=, pag vitoria
