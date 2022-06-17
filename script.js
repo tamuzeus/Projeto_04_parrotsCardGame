@@ -78,6 +78,7 @@ function matchCards(img1, img2){
         if(numberCorrects === cardsNumber){
             setTimeout(() => {
                 alert(`Você venceu!\nConseguiu achar todos os pares das ${cardsNumber} cartas!\nPrecisou realizar ${numberClick} viradas de cartas para vencer!`)
+                playAgain()
             }, 1500)
         }
     }
@@ -88,4 +89,33 @@ function matchCards(img1, img2){
             img2.classList.remove('flip')
         }, 1000)
     }
+}
+
+let repeat;
+function playAgain(){
+    let repeat = prompt('Quer jogar novamente? Digite: "S" ou "N"').toUpperCase()
+    if(repeat === 'S'){
+        window.location.reload()
+    }
+    else if(repeat === 'N'){
+        alert('Sem problemas! Até a próxima!')
+    }
+
+    else if(repeat != 'S' || repeat != 'N'){
+        while(repeat != 'S' || repeat != 'N'){
+            repeat = prompt('Quer jogar novamente? Digite: "S" ou "N"').toUpperCase()
+            if(repeat === 'S' || repeat === "N"){
+                if(repeat === 'S'){
+                    window.location.reload()
+                    break
+                }
+                else if(repeat === 'N'){
+                    alert('Sem problemas! Até a próxima!\nAproveite a vista dos pássaros dançantes DW!')
+                    break
+                }
+            }
+        }
+    }
+
+   
 }
