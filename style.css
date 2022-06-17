@@ -56,7 +56,7 @@ header > div > h1{
     cursor: pointer;
 
     position: relative;
-    transition: all 1s;
+    transition: all .5s;
     transform-style: preserve-3d;
 }
 
