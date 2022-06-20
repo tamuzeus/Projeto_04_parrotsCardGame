@@ -1,10 +1,9 @@
 
 //Capturar numero de cards
-let cards = prompt('Com quantas cartas quer jogar? Escolha de 4 a 14 cartas:');
+let cards = 6;
 let cardsNumber = parseInt(cards);
 let numberClick= 0;
 let numberCorrects = 0;
-
 //Arrays
 const frontCardsArray = ['unicornparrot.gif', 'tripletsparrot.gif', 'revertitparrot.gif', 'metalparrot.gif', 'fiestaparrot.gif', 'explodyparrot.gif', 'bobrossparrot.gif'];
 
@@ -53,17 +52,20 @@ function shuffleCards(){
 }
 
 let cardSelected
-function flipCard(element){
-    element.classList.add('flip')
-    if(cardSelected != null){
+let lockedBoard = false;
+function flipCard(element){  
+    if(!lockedBoard){
+        element.classList.add('flip')
         numberClick += 1
-        if(cardSelected != element){
-            matchCards(cardSelected, element)
+        if(cardSelected != null){
+            if(cardSelected != element){
+                lockedBoard = true;
+                matchCards(cardSelected, element)
+            }
         }
-    }
-    else{
-        cardSelected = element;
-        numberClick += 1
+        else{
+            cardSelected = element;
+        }
     }
 }
 //cardselect armazena a primeira info -- indica que ja possui uma carta virada
@@ -72,6 +74,7 @@ function flipCard(element){
 function matchCards(img1, img2){
     cardSelected = null
     if(img1.querySelector('.front-face .parrotImg').src === img2.querySelector('.front-face .parrotImg').src){
+        lockedBoard = false;
         img1.removeAttribute("onclick")
         img2.removeAttribute("onclick")
         numberCorrects += 2
@@ -80,15 +83,17 @@ function matchCards(img1, img2){
                 alert(`Você venceu!\nConseguiu achar todos os pares das ${cardsNumber} cartas!\nPrecisou realizar ${numberClick} viradas de cartas para vencer!`)
                 playAgain()
             }, 1500)
-        }
+        } 
     }
 
     else{
         setTimeout(() => {
             img1.classList.remove('flip')
             img2.classList.remove('flip')
+            lockedBoard = false;
         }, 1000)
     }
+    
 }
 
 let repeat;
