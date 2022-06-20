@@ -1,6 +1,6 @@
 
 //Capturar numero de cards
-let cards = 6;
+let cards = prompt('Com quantas cartas quer jogar? Escolha de 4 a 14 cartas:');
 let cardsNumber = parseInt(cards);
 let numberClick= 0;
 let numberCorrects = 0;
